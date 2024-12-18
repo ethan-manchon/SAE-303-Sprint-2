@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#map{ 
+    margin: auto;
+    height: 540px; 
+    width: 100%;
+}
