@@ -37,7 +37,7 @@ MapView.render = function (neo, post) {
                     "<b>" +
                         bac.lycee.nom +
                         "</b><br>" +
-                        bac.town +
+                        bac.lycee.town +
                         "<br>" +
                         "Candidature néo-bachelier: " +
                         bac.candidature.total +
