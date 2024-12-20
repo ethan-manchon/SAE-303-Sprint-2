@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidature MMI Limoges</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> -->
+<link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css" />
+<script src="./node_modules/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body id="app" class="bg-gray-100 flex flex-row items-center justify-center min-h-screen">
+    <div class="w-1/6 h-screen flex flex-col items-center bg-white p-4 rounded-lg shadow-lg">
+        <h2 class="text-xl text-gray-700 font-bold mb-4">Filtres: </h2>
+        <div class="mb-4 w-full flex items-center">
+            <input type="checkbox" id="distCheckbox"  name="sortCheckbox" class="mr-2" />
+            <label for="sortCheckbox" class="text-gray-700 font-bold">Recherche par distance</label>
+        </div>
+        <div class="mb-4 w-full">
+            <label for="distanceSlider" class="block text-gray-700 font-bold mb-2 flex-row items-center">Distance en km: <span id="distanceValue" class="ml-2 text-gray-700 font-bold">650</span></label>
+            <input type="range" id="distanceSlider" name="distanceSlider" min="10" max="650" value="650" class="w-full" oninput="document.getElementById('distanceValue').innerText = this.value">
+        </div>
+        <h2 class="text-l text-gray-700 font-bold mb-4">Filières: </h2>
+        <div class="mb-4 w-full flex items-center">
+            <input type="checkbox" id="postBacCheckbox" checked="checked" name="postBacCheckbox" class="mr-2" />
+            <label for="postBacCheckbox" class="text-gray-700 font-bold">Post-bacs</label>
+        </div>
+        <div class="mb-4 w-full flex items-center">
+            <input type="checkbox" id="generaleCheckbox" checked="checked" name="generaleCheckbox" class="mr-2" />
+            <label for="generaleCheckbox" class="text-gray-700 font-bold">Générale</label>
+        </div>
+        <div class="mb-4 w-full flex items-center">
+            <input type="checkbox" id="sti2dCheckbox" checked="checked" name="sti2dCheckbox" class="mr-2" />
+            <label for="sti2dCheckbox" class="text-gray-700 font-bold">STI2D</label>
+        </div>
+        <div class="mb-4 w-full flex items-center">
+            <input type="checkbox" id="autresCheckbox" checked="checked" name="autresCheckbox" class="mr-2" />
+            <label for="autresCheckbox" class="text-gray-700 font-bold">Autres</label>
+        </div>
+    </div>
+    <div class="w-1/2 max-h-screen flex flex-col items-center bg-white p-4 rounded-lg shadow-lg">
+        <h1 class="text-3xl  text-gray-700 font-bold mb-2">Candidature MMI Limoges</h1>
+        <div id="map" class="m-2 rounded-lg shadow-lg h-screen min-w-full"></div>    
+    </div>
+    <div class="w-2/6 h-screen flex flex-col items-center bg-white p-4 rounded-lg shadow-lg">
+        <div class="mb-4 w-full">
+            <label for="slider" class="block text-gray-700 font-bold mb-2 flex-row items-center">Nombre de candidature par département: <span id="sliderValue" class="ml-2 text-gray-700 font-bold">5</span></label>
+            <input type="range" id="slider" name="slider" min="1" max="20" value="5" class="w-full" oninput="document.getElementById('sliderValue').innerText = this.value">
+
+        </div>
+        <div id="chart" class="flex-grow min-w-full bg-gray-200 rounded-lg shadow-inner"></div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+
+</body>
+</html>
